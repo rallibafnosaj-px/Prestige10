@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:layout_marginBottom="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:background="@color/greyDarken3"
+        android:padding="16dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <CheckBox
+            android:backgroundTint="@color/colorWhite"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorWhite"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/chkSchedID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:id="@+id/changeSchedID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID: 1"/>
+        <TextView
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="5dp"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Day: "
+            android:id="@+id/tv_day_schedview"/>
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="5dp"
+            android:layout_width="300dp"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:layout_height="wrap_content"
+            android:text="Store: "
+            android:id="@+id/tv_store_schedview"/>
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"
+            android:layout_width="140dp"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:layout_height="wrap_content"
+            android:text="Time In: "
+            android:id="@+id/tv_time_in_schedview"/>
+        <TextView
+            android:textColor="@color/colorWhite"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Out: "
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:id="@+id/tv_time_out_schedview"/>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

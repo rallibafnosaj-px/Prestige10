@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:visible="false"
+        android:title="PendingSync"
+        android:id="@+id/pending_sync"
+        android:actionLayout="@layout/badge_layout"
+        android:icon="@drawable/cache_white"
+        app:showAsAction="always"
+        />
+</menu>

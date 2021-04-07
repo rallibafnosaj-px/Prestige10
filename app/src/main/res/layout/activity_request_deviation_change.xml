@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="@color/greyDarken4"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:backgroundTint="@color/greyDarken4"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:fontFamily="serif"
+            android:background="@color/colorGreen"
+            android:padding="16dp"
+            android:id="@+id/txtStoreNameDisplay"
+            android:gravity="center"
+            android:textColor="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Store Name"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_marginBottom="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGrey"/>
+
+        <GridLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:rowCount="2"
+            android:columnCount="2">
+            <TextView
+                android:id="@+id/tvFromDateCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_marginRight="5dp"
+                android:text="Current Time In: "
+                android:textColor="@color/colorWhite"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/txtStartTimeDisplay"
+                android:hint="(From)"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_marginRight="5dp"
+                android:text="Current Time Out: "
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="16dp"
+                android:id="@+id/txtEndTimeDisplay"
+                android:hint="(From)"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:textColorHint="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorWhite"
+            />
+
+        <GridLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:columnCount="2">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_marginRight="5dp"
+                android:text="New Time In: "
+                android:textColor="@color/colorWhite"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Select Time In   "
+                android:background="@drawable/buttonborderred"
+                android:padding="8dp"
+                android:id="@+id/txtStartTimeRequest"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_marginRight="5dp"
+                android:text="New Time Out: "
+                />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="16dp"
+                android:text="Select Time Out"
+                android:padding="8dp"
+                android:background="@drawable/buttonborderred"
+                android:id="@+id/txtEndTimeRequest"
+                android:inputType="numberDecimal"
+                android:textSize="20sp"
+                android:fontFamily="serif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"/>
+
+        <Button
+            android:textColor="@color/colorWhite"
+            android:layout_margin="16dp"
+            android:id="@+id/btnSetScheduleRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SET SCHEDULE"
+            android:textSize="20sp"
+            android:fontFamily="serif"
+            android:background="@drawable/buttonborderred"
+            />
+
+    </LinearLayout>
+</ScrollView>

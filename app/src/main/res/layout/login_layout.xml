@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyDarken4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:src="@drawable/automatlogotransparent" />
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorLightGrey">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtEmailAddress"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/email"
+                android:hint="  Email"
+                android:fontFamily="serif"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:minWidth="350dp"
+                android:maxWidth="350dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorLightGrey"
+                android:textCursorDrawable="@null"
+                app:backgroundTint="@color/colorWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorLightGrey">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtPassword"
+                android:fontFamily="serif"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/padlock"
+                android:hint="  Password"
+                android:maxWidth="350dp"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress|textNoSuggestions"
+                android:minWidth="350dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorLightGrey"
+                android:textCursorDrawable="@null"
+                app:backgroundTint="@color/colorWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorLightGrey">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edtContactNumber"
+                android:layout_width="wrap_content"
+                android:fontFamily="serif"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/phone"
+                android:hint="  Ex. 09281234567"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="11"
+                android:minWidth="350dp"
+                android:maxWidth="350dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                app:backgroundTint="@color/colorWhite"
+                android:textColorHint="@color/colorLightGrey"
+                android:textCursorDrawable="@null" />
+        </android.support.design.widget.TextInputLayout>
+
+        <CheckBox
+            android:gravity="left"
+            android:layout_gravity="left"
+            android:id="@+id/chkShowPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:paddingTop="4dp"
+            android:checked="false"
+            android:text="Show password"
+            android:fontFamily="serif"
+            android:buttonTint="@color/colorWhite"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/buttonborderred"
+            android:fontFamily="serif"
+            android:text="LOGIN TO AUTOMAT"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="@string/forgot_your_password"
+            android:textColor="@color/colorLightBlue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:text="@string/apkVersion"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF">
+
+        </TextView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyDarken4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greyDarken4"
+        android:orientation="vertical">
+
+        <View
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/tvCurrentWeekNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreen"
+            android:fontFamily="serif"
+            android:padding="16dp"
+            android:text="Week no. 1"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_margin="16dp"
+                android:id="@+id/storeLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif"
+                android:text="Store: "
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <Spinner
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@id/storeLbl"
+                android:id="@+id/spinner_weekly_inventory_store_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"/>
+
+            <TextView
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@id/spinner_weekly_inventory_store_location"
+                android:layout_marginTop="16dp"
+                android:id="@+id/tvInventoryStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Status: No Inventory Started"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:fontFamily="serif"/>
+
+            <Button
+                android:visibility="gone"
+                android:layout_below="@id/tvInventoryStatus"
+                android:fontFamily="serif"
+                android:id="@+id/btnSKUStocks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/buttonborderred"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="SKU STOCKS LIST"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:layout_marginTop="32dp"
+                android:layout_below="@id/btnSKUStocks"
+                android:fontFamily="serif"
+                android:id="@+id/btnStartInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborderred"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="PROCEED TO ITEM LIST"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:layout_below="@id/btnStartInventory"
+                android:id="@+id/btnEndInventory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="serif"
+                android:textSize="20sp"
+                android:background="@drawable/buttonborderred"
+                android:gravity="center"
+                android:text="END INVENTORY"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@color/greyDarken3">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/greyDarken3"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/txtItemList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGreen"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Item Name"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGrey1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Beginning"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:background="@color/greyDarken3"
+                android:columnCount="2"
+                android:columnOrderPreserved="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:rowCount="2">
+
+                <TextView
+                    android:id="@+id/tvSellingArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Selling Area (Pcs): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtSellingArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvWarehousePcs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Warehouse (Pcs):  "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtWarehouseInPcs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvWarehouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Warehouse (Cases):  "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtWarehouseInCases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGrey1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Delivery"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:rowCount="3">
+
+                <TextView
+                    android:id="@+id/tvDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Delivery (Pcs): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvDeliveryCases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Delivery (Cases): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtDeliveryCases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvAdjustment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Adjustment (Pcs):      "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtAdjustment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGrey1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Returns"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:rowCount="2">
+
+                <TextView
+                    android:id="@+id/tvPullOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Pull-Out (Pcs): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtPullout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvBO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Bad Order (Pcs):  "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtBO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvDamagedItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Damaged Item (Pcs): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtDamagedItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvExpiredItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Expired Items (Pcs):  "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtExpiredItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGrey1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Ending"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:rowCount="2">
+
+                <TextView
+                    android:id="@+id/tvEndSellingArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Selling Area (Pcs): "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtEndSellingArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvEndWarehousePcs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Warehouse (Pcs.):   "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtEndWarehouseInPcs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvEndWarehouse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Warehouse (Cases):   "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtEndWarehouseInCases"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGreen"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:id="@+id/tvDaysOS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorGreen"
+                    android:fontFamily="serif"
+                    android:text="Days O/S:                      "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/etDaysOS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tvDaysOS"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGreen">
+
+                <TextView
+                    android:id="@+id/tvOfftake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGreen"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="Offtake:                        "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <EditText
+                    android:id="@+id/etOfftake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvOfftake"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGreen"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvOutOfStocks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGreen"
+                    android:fontFamily="serif"
+                    android:text="Out of Stocks: "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="normal" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroupStocks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tvOutOfStocks"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rdbStocksYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorWhite"
+                        android:buttonTint="@color/colorWhite"
+                        android:fontFamily="serif"
+                        android:text="YES"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp" />
+
+                    <RadioButton
+                        android:id="@+id/rdbStocksNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:backgroundTint="@color/colorWhite"
+                        android:buttonTint="@color/colorWhite"
+                        android:fontFamily="serif"
+                        android:text="NO"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorGrey1"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Max Cap."
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:rowCount="2">
+
+                <TextView
+                    android:id="@+id/tvHomeShelf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:text="Home Shelf: "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtHomeShelf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvSecondaryDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:selectAllOnFocus="true"
+                    android:text="Secondary Display:   "
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/edtSecondaryDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="     0     "
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:selectAllOnFocus="true"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="20sp" />
+
+            </GridLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborderred"
+                android:fontFamily="serif"
+                android:text="Save"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tvRTVExpDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/greyDarken3"
+                android:fontFamily="serif"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.v7.widget.CardView>

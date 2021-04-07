@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyDarken4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greyDarken4"
+        android:orientation="vertical">
+            
+        <View
+            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite"/>
+            
+        <TextView
+            android:background="@color/colorGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:fontFamily="serif"
+            android:text="PERIOD OF ABSENCE"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+            
+        <TextView
+            android:paddingBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/colorGreen"
+            android:text="Please fill up all information below"
+            android:textColor="@color/colorWhite"
+            android:fontFamily="serif"
+            android:textSize="16sp" />
+                
+        <View
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorLightGrey" />
+            
+        <GridLayout
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnOrderPreserved="true"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <TextView
+                android:id="@+id/tvFromDateCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Date From: "
+                android:textColor="@color/colorWhite"
+                android:fontFamily="serif"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/etFromDateCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonborderred"
+                android:padding="8dp"
+                android:text="Select Date"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="serif"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvToDateCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="5dp"
+                android:text="Date To: "
+                android:textColor="@color/colorWhite"
+                android:fontFamily="serif"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/etToDateCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/buttonborderred"
+                android:padding="8dp"
+                android:text="Select Date"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="serif"
+                android:textSize="20sp" />
+
+            <TextView
+                android:fontFamily="serif"
+                android:id="@+id/tvDaysCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Day(s):"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="      0      "
+                android:inputType="numberDecimal"
+                android:maxLength="3"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorLightGrey"
+                android:fontFamily="serif"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvTotalHoursCovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Total Hours: "
+                android:fontFamily="serif"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/etTotalHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="     24     "
+                android:inputType="numberDecimal"
+                android:maxLength="4"
+                android:fontFamily="serif"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorLightGrey"
+                android:textSize="20sp" />
+        </GridLayout>
+        <!--
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/colorLightGrey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginBottom="8dp"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TYPE OF ABSENCE"/>
+            <RadioGroup
+                android:id="@+id/radioGroupTypeOfAbsenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/rbRequestdByClient"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requested by Client"/>
+                <RadioButton
+                    android:id="@+id/rbRequestByEmployer"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requested by Employer"/>
+                <RadioButton
+                    android:id="@+id/rbRequestByOutlet"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requested by Outlet"/>
+                <RadioButton
+                    android:id="@+id/rbRequestByAgency"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requested by Agency"/>
+                <RadioButton
+                    android:id="@+id/rbRequestDayOff"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Change Day Off"/>
+            </RadioGroup>
+    </LinearLayout>-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorWhite"/>
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Please input reason for absence"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorGreen"
+            android:padding="8dp"
+            android:fontFamily="serif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite"/>
+            
+        <EditText
+            android:background="@color/colorLightGrey"
+            android:backgroundTint="@color/colorWhite"
+            android:lines="7"
+            android:gravity="top|left"
+            android:hint="Please input reason here . . ."
+            android:textColorHint="@color/greyDarken4"
+            android:padding="10dp"
+            android:fontFamily="serif"
+            android:id="@+id/etReasonOfAbsence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/greyDarken4"
+            android:textSize="16sp" />
+        
+    </LinearLayout>
+
+    <Button
+        android:layout_gravity="bottom"
+        android:textSize="20sp"
+        android:fontFamily="serif"
+        android:id="@+id/btnSubmitRequestOfAbsence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttonborderred"
+        android:text="@string/submit_request"
+        android:textColor="@color/colorWhite" />
+
+</android.support.design.widget.CoordinatorLayout>

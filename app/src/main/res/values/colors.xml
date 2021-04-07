@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#12929f</color>
+    <color name="colorPrimaryDark">#12659f</color>
+    <color name="colorAccent">#62c59f</color>
+
+    <color name="colorMaroon">#800000</color>
+    <color name="colorLightBlue">#2196F3</color>
+    <color name="colorTransparent">@android:color/transparent</color>
+
+    <!--regcris-->
+    <color name="colorPrimaryReg">#e9986f</color>
+    <color name="colorPrimaryDarkReg">#ca2b35</color>
+    <color name="colorAccentReg">#efb38d</color>
+
+    <!--prestige-->
+    <color name="colorPrimaryPres">#89bdc8</color>
+    <color name="colorPrimaryDarkPres">#6ab1c5</color>
+    <color name="colorAccentPres">#adcfce</color>
+
+    <!--tmarks-->
+    <color name="colorPrimaryTM">#333d78</color>
+    <color name="colorPrimaryDarkTM">#222c65</color>
+    <color name="colorAccentTM">#444e89</color>
+
+    <color name="colorBlueGrey">#607d8b</color>
+    <color name="colorBlueGreyDarken4">#263238 </color>
+    <color name="greyDarken4">#212121</color>
+
+    <color name="colorLightGrey">#d3d3d3</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorGrey1">#757575</color>
+
+    <color name="colorGreen">#33691e</color>
+    <color name="colorGreyDarken">#212121</color>
+    <color name="greyDarken3">#424242</color>
+    <color name="colorLightGreen">#4ef84e</color>
+
+    <color name="duskYellow">#FFD700</color>
+        
+</resources>

@@ -1,0 +1,84 @@
+<resources>
+
+    <style name="RatingBar">
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+
+        <item name="colorControlNormal">@color/duskYellow</item>
+        <item name="colorControlActivated">@color/duskYellow</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- header navigation title color-->
+
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--regcris-->
+    <style name="RegcrisTheme">
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimaryReg</item>-->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkReg</item>
+        <item name="colorAccent">@color/colorAccentReg</item>
+    </style>
+
+    <!--prestige-->
+    <style name="PrestigeTheme">
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimaryPres</item>-->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDarkPres</item>-->
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorAccentPres</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <!--tmarks-->
+    <style name="TmarksTheme">
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <!-- Customize your theme here. -->
+        <!--<item name="colorPrimary">@color/colorPrimaryTM</item>-->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTM</item>
+        <item name="colorAccent">@color/colorAccentTM</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:listDivider">@color/colorWhite</item>
+        <item name="android:divider">@color/colorWhite</item>
+        <item name="actionBarDivider">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style
+        name="AppTheme.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

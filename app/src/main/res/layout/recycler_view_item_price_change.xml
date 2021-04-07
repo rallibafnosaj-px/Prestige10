@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardview_item"
+    android:background="@color/greyDarken3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    card_view:cardElevation="5dp"
+    card_view:cardCornerRadius="3dp">
+
+        <LinearLayout
+            android:background="@color/greyDarken3"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/black"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_alignParentTop="true" />
+-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/price_change_item_name"
+                    android:textColor="@color/mdtp_white"
+                    android:textSize="20sp"
+                    android:hint="Title"
+                    android:fontFamily="serif"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentTop="true" />
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₱ "
+                    android:textColor="@color/colorMaroon"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_alignParentTop="true" />
+-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:id="@+id/price_change_item_price"
+                    android:textColor="@color/mdtp_white"
+                    android:textSize="20sp"
+                    android:fontFamily="serif"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentTop="true" />
+
+        </LinearLayout>
+
+</android.support.v7.widget.CardView>

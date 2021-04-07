@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greyDarken4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/greyDarken4"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvItemCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="serif"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/spnnrItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textColor="@color/colorWhite"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            android:id="@+id/txtWeekNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:background="@color/colorGreen"
+            android:text="Week number"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <View
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <TextView
+            android:id="@+id/tvItemName"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Item Name:"
+            android:background="@color/colorGreen"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <View
+            android:background="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="serif"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="On Shelf Availability:"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:textColor="@color/colorWhite">
+
+            <RadioButton
+                android:id="@+id/rbOnShelf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorWhite"
+                android:fontFamily="serif"
+                android:text="On Shelf"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:layout_marginTop="8dp"
+                android:id="@+id/rbOutOfStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorWhite"
+                android:fontFamily="serif"
+                android:text="Out of Stock"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:layout_marginTop="8dp"
+                android:id="@+id/rbNotCarried"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorWhite"
+                android:fontFamily="serif"
+                android:text="Not Carried"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreen"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:text="On Shelf Details"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorWhite" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:rowCount="2">
+
+            <TextView
+                android:id="@+id/txtNumFacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Number of Facing:"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:gravity="center"
+                android:selectAllOnFocus="true"
+                android:id="@+id/edtNumFacing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="   0   "
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtMaxCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Maximum Capacity:"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:gravity="center"
+                android:selectAllOnFocus="true"
+                android:id="@+id/edtMaxCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="   0   "
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtHomeShelfPcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Home Shelf Pcs.:"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:selectAllOnFocus="true"
+                android:gravity="center"
+                android:id="@+id/edtHomeShelfPcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="   0   "
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txtSecondaryShelfPcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Secondary Shelf Pcs.:"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <EditText
+                android:selectAllOnFocus="true"
+                android:gravity="center"
+                android:id="@+id/edtSecondaryShelfPcs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/colorWhite"
+                android:hint="   0   "
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/buttonborderred"
+            android:fontFamily="serif"
+            android:text="Save"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</ScrollView>

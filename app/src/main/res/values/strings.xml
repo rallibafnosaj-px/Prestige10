@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">AutoMAT</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_post">Post Inventory</string>
+
+    <string name="CheckInOut">Time In / Out</string>
+    <string name="Store">Store</string>
+    <string name="PriceChange">Price Survey</string>
+    <string name="Inventory">Inventory</string>
+    <string name="OSA">OSA</string>
+    <string name="freshness">Freshness</string>
+    <string name="NearlyExpire">Return To Vendor</string>
+
+    <string name="ChangePassword">Change Password</string>
+    <string name="LogOut">Logout</string>
+    <string name="Item">Survey List</string>
+    <string name="title_activity_inventory_item">Inventory Item</string>
+    <string name="title_activity_osa_item">OSA Item</string>
+    <string name="title_activity_delivery">Delivery</string>
+    <string name="title_activity_item_delivery">Item Category</string>
+    <string name="Category">Item Category</string>
+    <string name="title_activity_nearly_expiring_items">Return to Vendor</string>
+    <string name="expenses">Expenses</string>
+    <string name="logs">Pending Sync</string>
+    <string name="SyncPanel2">Data waiting to be synced</string>
+    <string name="PayslipDate">Payslip Date</string>
+    <string name="Payslip">Payslip</string>
+    <string name="addItem">Add Item</string>
+    <string name="ForgotPassword">Forgot Password</string>
+    <string name="forgot_your_password"><u>Forgot your Password?</u></string>
+    <string name="fp_text">Please enter your employee number,\nwe set your password to default password.</string>
+    <string name="leave_request">LEAVE REQUEST</string>
+    <string name="period_of_leave">Period of Leave:</string>
+    <string name="date_covered">(Date Covered)</string>
+    <string name="days">Day(s)</string>
+    <string name="total_hours">Total Hours</string>
+    <string name="type_of_leave">TYPE OF LEAVE</string>
+    <string name="vacation_leave">Vacation Leave</string>
+    <string name="sick_leave">Sick Leave</string>
+    <string name="others">Others</string>
+    <string name="please_specify">Please specify</string>
+    <string name="remarks">Remarks:</string>
+    <string name="submit_request">SUBMIT REQUEST</string>
+    <string name="create_new_survey">Create New Survey</string>
+    <string name="link"><![CDATA[http://192.168.1.21/Prestige/Transaction/Reports/PaySlip.aspx?a1=23&a2=113&a3=CSTMR042&a4=23&a5=June%2016,%202018&a6=June%2030,%202018&a7=AVELINO%20JR,%20JR,%20ARNALDO%20M.ANGGING&a8=check&a9=C15015&a10=POSTED]]></string>
+    <string name="means_oftransportation">Means of\nTransportation:  </string>
+    <string name="rate_this_app">Rate this app</string>
+    <string name="beta_1_22_05_19_12">AutoMAT Ver. 1.0.1</string> // first apk 23 modules 05-19
+    <string name="update_app_data">Update App Data</string>
+    <string name="about">About</string>
+    <string name="feedback">Feedback</string>
+    <string name="faqs">NO ADDRESS FOUND\n
+            1. Update Google Maps\n
+             - go to play store\n
+             - then apps and games\n
+             - then update ung maps and navigation\n
+            2. restart app and try again\n
+            3. Restart WIFI or Data
+    </string>
+    <string name="apkVersion">Ver. - 1.0.4 (For Android 11)</string>
+    <string name="resetIcon">Restart Application</string>
+
+    <string name="faqs2">
+            NO STORE IN DTR MODULE\n
+            1. This means no schedule was found for your account. Please contact administrator to create your deployment schedule.
+    </string>
+
+    <string name="faqs3">
+            NO IMAGE AFTER SELFIE\n
+            1. Please go to setting of your phone and look for Automat in your applications. Check if all permission is on for camera and storage.
+    </string>
+
+    <string name="faqs4">
+            HOW TO CHECK IF DTR WAS SYNCED\n
+            1. Go to Review DTR (Internet Requeired). Check if your time in/out is in the list.
+    </string>
+    <string name="beta_1_22_13_06_19">AutoMAT Ver. 1.0.0</string>
+    <string name="change_ip_address">Change IP Address</string>
+
+    <!--Shelf life spinner Item-->
+    <string-array name="spnnrVal">
+        <item>Day(s)</item>
+        <item>Month(s)</item>
+        <item>Year(s)</item>
+    </string-array>
+
+    <!--means of transportation-->
+    <string-array name="meansOfTranspoSpinner">
+        <item>Tricycle</item>
+        <item>Motorcycle</item>
+        <item>Jeep</item>
+        <item>Bus</item>
+        <item>Taxi</item>
+        <item>Ferry</item>
+        <item>MRT</item>
+        <item>LRT</item>
+        <item>PNR</item>
+        <item>Walking</item>
+    </string-array>
+
+    <!--Unit of measure for delivery details-->
+    <string-array name="unitOfMeasure">
+        <item>Box</item>
+        <item>Case</item>
+        <item>Piece</item>
+    </string-array>
+</resources>

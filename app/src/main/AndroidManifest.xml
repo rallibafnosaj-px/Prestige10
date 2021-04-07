@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.quaditsolutions.mmreport">
+
+    <!-- Adding the Restart Mobile Permission -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/automat_logo1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+      >
+
+        <!-- Splash screen -->
+        <!--
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        -->
+
+        <activity
+            android:name=".StartUpActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LeaveRequestActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LogInActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RequestDeviationActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CheckInActivity"
+            android:label="@string/CheckInOut"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:label="@string/ChangePassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PriceChangeActivity"
+            android:label="@string/PriceChange"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PriceItemActivity"
+            android:label="@string/Item"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PriceStoreActivity"
+            android:label="@string/Store"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ItemCategoryActivity"
+            android:label="@string/Category"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FreshnessItemList"
+            android:label="Item List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OSAActivity"
+            android:label="@string/Store"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ItemCategoryOSA"
+            android:label="@string/Category"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OSAItemActivity"
+            android:label="@string/title_activity_osa_item"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddItemMaintenance"
+            android:label="@string/addItem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DeliveryActivity"
+            android:label="Freshness Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FreshnessItem"
+            android:label="@string/title_activity_item_delivery"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Expenses"
+            android:label="@string/expenses"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NearlyToExpiredList"
+            android:label="Expiring SKU List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".NearlyToExpiredActivity"
+            android:label="@string/title_activity_nearly_expiring_items"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SyncPanel2"
+            android:label="@string/SyncPanel2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <!--android:theme="@style/AppTheme.NoActionBar"-->
+
+        <activity
+            android:name=".OvertimeRequestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AnnouncementActivity"
+            android:label="Announcements"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestDeviationSchedule"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestDeviationChangeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".FeedbackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WeeklyInventoryStatus"
+            android:label="Weekly Inventory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestOneDayDeviationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReviewExpenseBeforeGoingToPendingSync"
+            android:label="Review Expense"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PayslipWebView"
+            android:label="Payslip"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DTRReviewActivity"
+            android:label="Review Synced DTR List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RequestPanel"
+            android:label="Request Panel"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateNewSchedule"
+            android:label="Create New Schedule"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ViewScheduleActivity"
+            android:label="Schedule Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EmployeeScheduleActivity"
+            android:label="Deployment Schedule"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".announcementDetails"
+            android:label="Annoucement Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AutomatAPKDownloadWebview"
+            android:label="Download Automat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ItemInventoryListActivity"
+            android:label="Inventory Item List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SKUStocksListActivityList"
+            android:label="SKU Stocks List"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ChangeIPAddressActivity"
+            android:label="IP Address"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FAQActivity"
+            android:label="Frequently Asked Questions"
+            android:screenOrientation="portrait" />
+
+        <!-- Adding the Background Receiver Restart -->
+        <!--
+        <receiver
+            android:name=".SyncDataReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        -->
+
+        <receiver
+            android:name=".TimeChangedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Adding the Background Service -->
+        <service android:name=".SyncDataService" />
+        <service android:name=".NotificationService" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,421 @@
+package com.quaditsolutions.mmreport;
+
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Rozz on 31/07/2018.
+ */
+
+public class EmployeeScheduleActivity extends AppCompatActivity {
+
+    ProgressDialog progressDialog;
+    String userCode, companyCode, storeLocation, remarks;
+
+    SQLiteDatabase sqlDB;
+    Cursor cursor;
+
+    GlobalVar gv = new GlobalVar();
+    List<GlobalVar> getDataAdapter;
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    RecyclerViewEmployeeDeploymentSchedule recyclerViewScheduleView;
+
+    String TAG = "Response", currentIPAddress;
+
+    SoapPrimitive resultUpdateScheduleChanged, resultSchedule;
+
+    Button btnUpdateSchedule;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        // test if login as prestige, regris etc.
+        SharedPreferences sp = getSharedPreferences("mainInfo", Context.MODE_PRIVATE);
+        userCode = sp.getString("userCode", null);
+        companyCode = sp.getString("companyCode", null);
+        storeLocation = sp.getString("storeLocation", null);
+        currentIPAddress = sp.getString("ipAddress", null);
+
+        switch (companyCode) {
+            case "CMPNY01":
+                setTheme(R.style.RegcrisTheme);
+                //imgViewHome.setImageResource(R.drawable.prestige);
+                if (Build.VERSION.SDK_INT >= 21) {
+                    //getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryReg));
+                }
+                break;
+
+            case "CMPNY02":
+                setTheme(R.style.PrestigeTheme);
+                //imgViewHome.setImageResource(R.drawable.regcris);
+                if (Build.VERSION.SDK_INT >= 21) {
+                    //getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkPres));
+                }
+                break;
+
+            case "CMPNY03":
+                setTheme(R.style.TmarksTheme);
+                //imgViewHome.setImageResource(R.drawable.tmarks);
+                if (Build.VERSION.SDK_INT >= 21) {
+                    //getWindow().setNavigationBarColor(getResources().getColor(R.color.colorPrimary));
+                    getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDarkTM));
+                }
+                break;
+
+            default:
+                setTheme(R.style.AppTheme);
+                break;
+        }
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_employee_deployment);
+
+        getDataAdapter = new ArrayList<>();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview_schedule_view);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerViewScheduleView = new RecyclerViewEmployeeDeploymentSchedule(getDataAdapter, this);
+        recyclerView.setAdapter(recyclerViewScheduleView);
+        btnUpdateSchedule = (Button) findViewById(R.id.btnUpdateSchedule);
+
+        getScheduleDataList();
+
+        btnUpdateSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder b = new AlertDialog.Builder(EmployeeScheduleActivity.this);
+                b.setTitle("Confirm Update");
+                b.setMessage("Are you sure you want to update your schedule?");
+                b.setNegativeButton("CANCEL", null);
+                b.setPositiveButton("UPDATE", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        getSchedule schedule = new getSchedule();
+                        schedule.execute();
+                    }
+                });
+                b.show();
+            }
+        });
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    public void getScheduleDataList() {
+        try {
+            sqlDB = openOrCreateDatabase("mobileprestige", Context.MODE_PRIVATE, null);
+
+            cursor = sqlDB.rawQuery("SELECT workingDays, " +
+                    "startTime, " +
+                    "endTime, " +
+                    "storeName, " +
+                    "storeLocCode,scheduleID FROM schedule ORDER BY " +
+                    "case when workingDays = 'Monday' then 1 " +
+                    "when workingDays = 'Tuesday' then 2 " +
+                    "when workingDays = 'Wednesday' then 3 " +
+                    "when workingDays = 'Thursday' then 4 " +
+                    "when workingDays = 'Friday' then 5 " +
+                    "when workingDays = 'Saturday' then 6 " +
+                    "when workingDays = 'Sunday' then 7 " +
+                    "else 8 end ASC", null);
+
+            if (cursor.getCount() == 0) {
+                Toast.makeText(this, "No Schedule Found.", Toast.LENGTH_SHORT).show();
+            } else {
+                if (cursor.moveToFirst()) {
+
+                    getDataAdapter.clear();
+
+                    do {
+                        GlobalVar globalVar = new GlobalVar();
+
+                        globalVar.schedWorkingDay = cursor.getString(0);
+                        globalVar.schedStartTime = cursor.getString(1);
+                        globalVar.schedEndTime = cursor.getString(2);
+                        globalVar.schedStoreName = cursor.getString(3);
+                        globalVar.schedStoreLocCode = cursor.getString(4);
+                        globalVar.schedscheduleID = cursor.getString(5);
+
+                        getDataAdapter.add(globalVar);
+                        recyclerViewScheduleView.notifyDataSetChanged();
+
+                    }
+                    while (cursor.moveToNext());
+
+                    sqlDB.close();
+
+                }
+            }
+        } catch (Exception e) {
+            Log.i("TAG", "Error fetching schedule list: " + e);
+        }
+    }
+
+    //Update Message Status
+    private class requestChangedScheduleClass extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            Log.i(TAG, "onPreExecute");
+            progressDialog.setTitle("Loading please wait ...");
+            progressDialog.show();
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Log.i(TAG, "doInBackground");
+
+            /*
+            final int totalProgressTime = 100;
+            int jumTime = 0;
+            p = new ProgressDialog(RequestDeviationActivity.this);
+            p.setMessage("Sending ...");
+            p.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            p.setIndeterminate(true);
+            p.show();
+            p.setCancelable(true);
+            */
+
+            cursor = sqlDB.rawQuery("SELECT workingDays, " +
+                    "startTime, " +
+                    "endTime, " +
+                    "storeLocCode " +
+                    " FROM scheduleTemp", null);
+
+            if (cursor.getCount() != 0) {
+                if (cursor.moveToFirst()) {
+                    do {
+                        requestChangedSchedule(cursor.getString(0),
+                                cursor.getString(1),
+                                cursor.getString(2),
+                                cursor.getString(3));
+                    }
+                    while (cursor.moveToNext());
+                }
+            }
+
+            cursor.close();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+
+            progressDialog.dismiss();
+            Log.i(TAG, "onPostExecute" + result);
+
+            try {
+                if (resultUpdateScheduleChanged.toString().equals("Failed")) {
+                    android.support.v7.app.AlertDialog.Builder b = new android.support.v7.app.AlertDialog.Builder(EmployeeScheduleActivity.this);
+                    b.setTitle("Failed");
+                    b.setMessage("Please try again later.");
+                    b.show();
+                } else {
+                    try {
+                        Log.i(TAG, "Request Schedule");
+
+                        android.support.v7.app.AlertDialog.Builder b = new android.support.v7.app.AlertDialog.Builder(EmployeeScheduleActivity.this);
+                        b.setTitle("Success");
+                        b.setMessage("Change schedule request was sent successfully.");
+                        b.setCancelable(true);
+                        b.setPositiveButton("OK", null);
+                        b.show();
+
+                        sqlDB.execSQL("DELETE FROM scheduleTemp");
+                    } catch (Exception e) {
+                        Log.i(TAG, "Error :" + e);
+                    }
+                }
+            } catch (Exception e) {
+                Log.i(TAG, "Error: " + e);
+            }
+        }
+    }
+
+    private void requestChangedSchedule(String workingDays, String startTime, String endTime, String storeLocCode) {
+        String SOAP_ACTION = "http://tempuri.org/insertChangeScheduleRequest";
+        String METHOD_NAME = "insertChangeScheduleRequest";
+        String NAMESPACE = "http://tempuri.org/";
+
+        try {
+            SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
+
+            Request.addProperty("reason", remarks);
+            Request.addProperty("employeeNo", userCode);
+            Request.addProperty("workingDays", workingDays);
+            Request.addProperty("starttime", startTime);
+            Request.addProperty("endtime", endTime);
+            Request.addProperty("storeLocCode", storeLocCode);
+
+            SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            soapEnvelope.dotNet = true;
+            soapEnvelope.setOutputSoapObject(Request);
+
+            HttpTransportSE transport = new HttpTransportSE(currentIPAddress);
+
+            transport.call(SOAP_ACTION, soapEnvelope);
+            resultUpdateScheduleChanged = (SoapPrimitive) soapEnvelope.getResponse();
+
+            Log.i(TAG, "Result Request: " + resultUpdateScheduleChanged);
+        } catch (Exception ex) {
+            Log.e(TAG, "Error: " + ex.getMessage());
+        }
+    }
+
+    private void requestScheduleStart() {
+        requestChangedScheduleClass sRequest = new requestChangedScheduleClass();
+        sRequest.execute();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        startActivity(new Intent(EmployeeScheduleActivity.this, MainActivity.class));
+        finish();
+        return super.onOptionsItemSelected(item);
+    }
+
+    // schedule class
+    private class getSchedule extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            Log.i(TAG, "onPreExecute");
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Log.i(TAG, "doInBackground");
+            schedule();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            Log.i(TAG, "onPostExecute" + result);
+
+            //Open Database
+            sqlDB = openOrCreateDatabase("mobileprestige", Context.MODE_PRIVATE, null);
+            sqlDB.beginTransaction();
+            try {
+
+                if (resultSchedule != null) {
+
+                    sqlDB.execSQL("DELETE FROM schedule");
+
+                    JSONArray jArray = new JSONArray(resultSchedule.toString());
+                    for (int i = 0; i < jArray.length(); i++) {
+                        JSONObject json_data = jArray.getJSONObject(i);
+                        gv.workingDays = json_data.getString("workingDays");
+                        gv.startTime = json_data.getString("startTime");
+                        gv.endTime = json_data.getString("endTime");
+                        gv.storeName = json_data.getString("storeName");
+                        gv.storeLocCode = json_data.getString("storeLocCode");
+                        gv.scheduleID = json_data.getString("schedHeadId");
+                        GlobalVar.storeLoc = json_data.getString("storeLocCode");
+
+                        sqlDB.execSQL("INSERT OR REPLACE INTO schedule" +
+                                "(scheduleID, " +
+                                "userCode, " +
+                                "workingDays, " +
+                                "startTime, " +
+                                "endTime, " +
+                                "storeLocCode, " +
+                                "storeName) " +
+                                "VALUES" +
+                                "('" + gv.scheduleID +
+                                "', '" + userCode +
+                                "', '" + gv.workingDays +
+                                "', '" + gv.startTime +
+                                "', '" + gv.endTime +
+                                "', '" + gv.storeLocCode +
+                                "', '" + gv.storeName + "');");
+                    }
+                    Log.i(TAG, "success SCHEDULE");
+
+                    recyclerViewScheduleView.notifyDataSetChanged();
+
+                    // getScheduleDataList();
+
+                } else {
+                    Log.i(TAG, "Schedule is NULL");
+                }
+            } catch (JSONException e) {
+                if (!"null".equals(e) || !"".equals(e)) {
+                    Toast.makeText(getApplication(), "No Event to show!", Toast.LENGTH_SHORT).show();
+
+                    Log.i(TAG, "ERROR: SCHEDULE");
+                }
+            }
+            sqlDB.setTransactionSuccessful();
+            sqlDB.endTransaction();
+            sqlDB.close();
+
+            getScheduleDataList();
+
+        }
+    }
+
+    // schedule ksoap for webservice
+    public void schedule() {
+
+        String SOAP_ACTION = "http://tempuri.org/getScheduleJSON";
+        String METHOD_NAME = "getScheduleJSON";
+        String NAMESPACE = "http://tempuri.org/";
+
+        try {
+            SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
+
+            Request.addProperty("employeeNo", userCode);
+
+            SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            soapEnvelope.dotNet = true;
+            soapEnvelope.setOutputSoapObject(Request);
+
+            HttpTransportSE transport = new HttpTransportSE(currentIPAddress);
+            transport.call(SOAP_ACTION, soapEnvelope);
+            resultSchedule = (SoapPrimitive) soapEnvelope.getResponse();
+
+            Log.i(TAG, "Result Schedule: " + resultSchedule);
+        } catch (Exception e) {
+            Log.e(TAG, "Error Schedule: " + e);
+        }
+    }
+
+}
